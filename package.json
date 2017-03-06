@@ -16,6 +16,7 @@
     "react-redux": "^5.0.3",
     "react-router-dom": "^4.0.0-beta.6",
     "redux": "^3.6.0",
+    "removable-middleware": "^1.0.0",
     "styled-components": "^1.4.4"
   }
 }

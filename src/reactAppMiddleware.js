@@ -17,7 +17,7 @@ export default (req, res, next) => {
   } else {
     res.send(`
       <body>
-        Test
+        Tests
         <div id="app">${html}</div>
         <script src="client.js"></script>
       </body>

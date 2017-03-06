@@ -1,40 +1,17 @@
 import express from 'express';
+import removableMiddleware from 'removable-middleware';
 import reactAppMiddleware from './reactAppMiddleware';
+
 const app = express();
-
-const replacableMiddleware = initialMiddleware => {
-
-	if (typeof initialMiddleware !== 'function') {
-		throw new Error('`replacableMiddleware(initialMiddleware)`: `initialMiddleware` must be a middleware function.');
-	}
-
-	let currentMiddleware = initialMiddleware;
-
-	const middleware = (...args) => {
-		currentMiddleware(...args);
-	};
-
-	middleware.replace = nextMiddleware => {
-
-		if (typeof nextMiddleware !== 'function') {
-			throw new Error('`replacableMiddleware.replace(nextMiddleware)`: `nextMiddleware` must be a middleware function.');
-		}
-
-		currentMiddleware = nextMiddleware;
-	};
-
-	return middleware;
-};
-
-const replaceMiddleware = replacableMiddleware(reactAppMiddleware);
+const middleware = removableMiddleware(reactAppMiddleware);
 
 app
-	.use(replaceMiddleware)
+	.use(middleware)
 	.listen(4000)
 ;
 
 if(module.hot) {
 	module.hot.accept('./reactAppMiddleware', () => {
-		import('./reactAppMiddleware').then(module => replaceMiddleware.replace(module.default));
+		import('./reactAppMiddleware').then(module => middleware.replace(module.default));
 	});
 }
