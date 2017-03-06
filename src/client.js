@@ -4,6 +4,7 @@ import {BrowserRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import store from './store';
 import App from './components/App';
+import './client.css';
 
 const render = Root => {
   ReactDOM.render(
