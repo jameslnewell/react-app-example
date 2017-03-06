@@ -9,7 +9,6 @@
     "serve": "env NODE_PATH='./node_modules:./node_modules/tradie-template-react-app' tradie serve"
   },
   "dependencies": {
-    "babel-core": "^6.23.1",
     "express": "^4.15.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
