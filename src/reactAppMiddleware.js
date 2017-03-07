@@ -11,7 +11,7 @@ export default (req, res, next) => {
   try {
     scripts = JSON.parse(fs.readFileSync(__dirname + '/async-scripts.json').toString());
   } catch (e) {
-    console.log(e);
+    console.log(e.message);
   }
   console.log(scripts);
 
@@ -37,6 +37,7 @@ export default (req, res, next) => {
       </head>
       <body>
         <div id="app">${html}</div>
+        <script src="vendor.js"></script>
         <script src="client.js"></script>
       </body>
     `);
