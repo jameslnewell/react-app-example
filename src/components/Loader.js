@@ -1,5 +1,7 @@
 import React from 'react';
 
+//TODO: move to own package
+
 const Loading = () => (
   null
 );

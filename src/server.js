@@ -6,6 +6,7 @@ const app = express();
 const middleware = removableMiddleware(reactAppMiddleware);
 
 app
+  .use(express.static(__dirname))
 	.use(middleware)
 	.listen(4000)
 ;

@@ -1,10 +1,10 @@
 import React from 'react'
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, Link} from 'react-router-dom';
 import styled from 'styled-components';
 import loadAsync from './Loader';
 
 const Layout = styled.div`
-  
+
 `;
 
 const Header = styled.header`
@@ -20,9 +20,14 @@ const Footer = styled.footer`
 export default () => (
   <Layout>
       <Header/>
+      <nav>
+        <Link to="/">Home</Link>
+        {' '}
+        <Link to="/contact">Contact</Link>
+      </nav>
       <Switch>
         <Route exact path="/" component={loadAsync(() => import('./pages/Home'))}/>
-        <Route path="/contact" component={loadAsync(() => import('./pages/Home'))}/>
+        <Route path="/contact" component={loadAsync(() => import('./pages/Contact'))}/>
       </Switch>
       <Footer/>
   </Layout>

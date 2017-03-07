@@ -6,16 +6,18 @@
   },
   "scripts": {
     "clean": "env NODE_PATH='./node_modules:./node_modules/tradie-template-react-app' tradie clean",
+    "build": "env NODE_PATH='./node_modules:./node_modules/tradie-template-react-app' tradie build",
     "serve": "env NODE_PATH='./node_modules:./node_modules/tradie-template-react-app' tradie serve"
   },
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "express": "^4.15.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.3",
-    "react-router-dom": "^4.0.0-beta.6",
+    "react-router-dom": "^4.0.0-beta.7",
     "redux": "^3.6.0",
     "removable-middleware": "^1.0.0",
-    "styled-components": "^1.4.4"
+    "styled-components": "^2.0.0-7"
   }
 }
