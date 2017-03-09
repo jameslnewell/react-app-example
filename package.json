@@ -5,12 +5,13 @@
     "tradie-template-react-app": "^1.0.0-preview.1"
   },
   "scripts": {
-    "clean": "env NODE_PATH='./node_modules:./node_modules/tradie-template-react-app' tradie clean",
-    "build": "env NODE_PATH='./node_modules:./node_modules/tradie-template-react-app' tradie build",
-    "serve": "env NODE_PATH='./node_modules:./node_modules/tradie-template-react-app' tradie serve"
+    "clean": "cross-env NODE_PATH='./node_modules;./node_modules/tradie-template-react-app' tradie clean",
+    "build": "cross-env NODE_PATH='./node_modules;./node_modules/tradie-template-react-app' tradie build",
+    "serve": "cross-env NODE_PATH='./node_modules;./node_modules/tradie-template-react-app' tradie serve"
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
+    "cross-env": "^3.2.3",
     "express": "^4.15.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
