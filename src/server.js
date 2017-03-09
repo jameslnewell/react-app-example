@@ -1,3 +1,4 @@
+import 'source-map-support/register';
 import express from 'express';
 import removableMiddleware from 'removable-middleware';
 import reactAppMiddleware from './reactAppMiddleware';
@@ -13,6 +14,6 @@ app
 
 if(module.hot) {
 	module.hot.accept('./reactAppMiddleware', () => {
-		import('./reactAppMiddleware').then(module => middleware.replace(module.default));
+    middleware.replace(require('./reactAppMiddleware').default);
 	});
 }

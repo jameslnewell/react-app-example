@@ -22,6 +22,6 @@ render(App);
 
 if (module.hot) {
   module.hot.accept('./components/App', () => {
-    import('./components/App').then(module => render(module.default))
+    render(require('./components/App').default);
   });
 }
