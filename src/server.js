@@ -9,7 +9,7 @@ const middleware = removableMiddleware(reactAppMiddleware);
 app
   .use(express.static(__dirname))
 	.use(middleware)
-	.listen(4000)
+	.listen(process.env.PORT)
 ;
 
 if(module.hot) {
