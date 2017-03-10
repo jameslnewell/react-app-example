@@ -12,10 +12,8 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
-    "enzyme": "^2.7.1",
     "express": "^4.15.0",
     "react": "^15.4.2",
-    "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.3",
     "react-router-dom": "^4.0.0-beta.7",
@@ -23,5 +21,9 @@
     "removable-middleware": "^1.0.0",
     "source-map-support": "^0.4.11",
     "styled-components": "^2.0.0-7"
+  },
+  "devDependencies": {
+    "enzyme": "^2.7.1",
+    "react-addons-test-utils": "^15.4.2"
   }
 }
