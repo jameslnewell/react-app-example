@@ -8,9 +8,11 @@ const Image = styled.img`
   max-height: 100%;
 `;
 
-export default () => (
+const Home = () => (
   <div>
     <Heading>Home</Heading>
     <Image src={src} alt="hello-world"/>
   </div>
 );
+
+export default Home;

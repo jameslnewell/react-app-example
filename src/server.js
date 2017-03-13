@@ -12,8 +12,8 @@ app
 	.listen(process.env.PORT)
 ;
 
-if(module.hot) {
+if (module.hot) {
 	module.hot.accept('./reactAppMiddleware', () => {
-    middleware.replace(require('./reactAppMiddleware').default);
+    middleware.replace(require('./reactAppMiddleware').default); //eslint-disable-line global-require
 	});
 }

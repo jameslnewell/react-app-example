@@ -1,8 +1,10 @@
 import React from 'react';
 import Heading from '../Heading';
 
-export default () => (
+const Contact = () => (
   <div>
     <Heading>Contact</Heading>
   </div>
 );
+
+export default Contact;

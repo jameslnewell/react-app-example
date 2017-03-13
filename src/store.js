@@ -8,7 +8,7 @@ const store = createStore(
 
 if (module.hot) {
   module.hot.accept('./reducer', () => {
-    store.replaceReducer(require('./reducer').default);
+    store.replaceReducer(require('./reducer').default); //eslint-disable-line global-require
   });
 }
 
