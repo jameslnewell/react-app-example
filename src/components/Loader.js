@@ -11,11 +11,16 @@ const Error = ({error}) => (
   </div>
 );
 
+Error.propTypes = {
+  error: React.PropTypes.instanceOf(Error)
+};
+
 export default (load, options = {}) => {
   const LoadingComponent = options.loading || Loading;
   const ErrorComponent = options.error || Error;
 
   class AsyncLoader extends React.Component {
+
     state = {
       loaded: false,
       error: false
@@ -33,8 +38,8 @@ export default (load, options = {}) => {
           this.component = module.default || module;
           this.setState({loaded: true});
         },
-        error => {
-          this.error = error;
+        err => {
+          this.error = err;
           this.setState({error: true});
         }
       );

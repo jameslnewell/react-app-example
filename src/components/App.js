@@ -17,7 +17,7 @@ const Footer = styled.footer`
   background-color: grey;
 `;
 
-export default () => (
+const App = () => (
   <Layout>
     <Header />
     <nav>
@@ -39,3 +39,5 @@ export default () => (
     <Footer />
   </Layout>
 );
+
+export default App;

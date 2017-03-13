@@ -22,6 +22,6 @@ render(App);
 
 if (module.hot) {
   module.hot.accept('./components/App', () => {
-    render(require('./components/App').default);
+    render(require('./components/App').default); //eslint-disable-line global-require
   });
 }
