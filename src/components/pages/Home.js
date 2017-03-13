@@ -11,7 +11,7 @@ const Image = styled.img`
 const Home = () => (
   <div>
     <Heading>Home</Heading>
-    <Image src={src} alt="hello-world"/>
+    <Image src={src} alt="hello-world" />
   </div>
 );
 

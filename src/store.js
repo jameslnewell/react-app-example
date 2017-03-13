@@ -1,5 +1,5 @@
-import {createStore} from 'redux';
-import reducer from './reducer';
+import { createStore } from "redux";
+import reducer from "./reducer";
 
 const store = createStore(
   reducer,
@@ -7,8 +7,8 @@ const store = createStore(
 );
 
 if (module.hot) {
-  module.hot.accept('./reducer', () => {
-    store.replaceReducer(require('./reducer').default); //eslint-disable-line global-require
+  module.hot.accept("./reducer", () => {
+    store.replaceReducer(require("./reducer").default); //eslint-disable-line global-require
   });
 }
 
