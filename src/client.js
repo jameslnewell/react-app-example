@@ -10,7 +10,7 @@ import './client.css';
 const render = Root => {
   ReactDOM.render(
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.BASE_URL}>
         <Root/>
       </BrowserRouter>
     </Provider>,
