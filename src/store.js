@@ -1,16 +1,14 @@
-import {createStore} from 'redux'; 
-import reducer from './reducer';
-
-const enhancer = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+import { createStore } from "redux";
+import reducer from "./reducer";
 
 const store = createStore(
   reducer,
-  enhancer
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 if (module.hot) {
-  module.hot.accept('./reducer', () => {
-    store.replaceReducer(require('./reducer').default);
+  module.hot.accept("./reducer", () => {
+    store.replaceReducer(require("./reducer").default); //eslint-disable-line global-require
   });
 }
 

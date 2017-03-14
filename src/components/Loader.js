@@ -2,9 +2,7 @@ import React from 'react';
 
 //TODO: move to own package
 
-const Loading = () => (
-  null
-);
+const Loading = () => null;
 
 const Error = ({error}) => (
   <div>
@@ -13,8 +11,11 @@ const Error = ({error}) => (
   </div>
 );
 
-export default (load, options = {}) => {
+Error.propTypes = {
+  error: React.PropTypes.instanceOf(Error)
+};
 
+export default (load, options = {}) => {
   const LoadingComponent = options.loading || Loading;
   const ErrorComponent = options.error || Error;
 
@@ -32,19 +33,16 @@ export default (load, options = {}) => {
         return;
       }
 
-      load()
-        .then(
-          module => {
-            this.component = module.default || module;
-            this.setState({loaded: true});
-          },
-          error => {
-            this.error = error;
-            this.setState({error: true});
-          }
-        )
-      ;
-
+      load().then(
+        module => {
+          this.component = module.default || module;
+          this.setState({loaded: true});
+        },
+        err => {
+          this.error = err;
+          this.setState({error: true});
+        }
+      );
     }
 
     render() {
@@ -52,16 +50,15 @@ export default (load, options = {}) => {
 
       if (loaded) {
         const Component = this.component;
-        return <Component {...this.props}/>;
+        return <Component {...this.props} />;
       }
 
       if (error) {
-        return <ErrorComponent {...this.props} error={this.error}/>;
+        return <ErrorComponent {...this.props} error={this.error} />;
       }
 
-      return <LoadingComponent {...this.props}/>;
+      return <LoadingComponent {...this.props} />;
     }
-
   }
 
   return AsyncLoader;

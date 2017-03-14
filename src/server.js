@@ -9,11 +9,11 @@ const middleware = removableMiddleware(reactAppMiddleware);
 app
   .use(express.static(__dirname))
 	.use(middleware)
-	.listen(4000)
+	.listen(process.env.PORT)
 ;
 
-if(module.hot) {
+if (module.hot) {
 	module.hot.accept('./reactAppMiddleware', () => {
-    middleware.replace(require('./reactAppMiddleware').default);
+    middleware.replace(require('./reactAppMiddleware').default); //eslint-disable-line global-require
 	});
 }

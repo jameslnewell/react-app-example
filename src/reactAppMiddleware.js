@@ -1,15 +1,15 @@
-import React from 'react';
 import fs from 'fs';
+import React from 'react';
 import {renderToString} from 'react-dom/server';
 import {StaticRouter} from 'react-router-dom';
 import {styleSheet} from 'styled-components';
 import App from './components/App.js';
 
-export default (req, res, next) => {
+export default (req, res) => {
 
   let scripts = [];
   try {
-    scripts = JSON.parse(fs.readFileSync(__dirname + '/async-scripts.json').toString());
+    scripts = JSON.parse(fs.readFileSync(`${__dirname}/asset-manifest.json`).toString());
   } catch (e) {
     console.log(e.message);
   }
@@ -37,8 +37,8 @@ export default (req, res, next) => {
       </head>
       <body>
         <div id="app">${html}</div>
-        <script src="vendor.js"></script>
-        <script src="client.js"></script>
+        <script src="vendor.js" defer></script>
+        <script src="client.js" defer></script>
       </body>
     `);
   }
