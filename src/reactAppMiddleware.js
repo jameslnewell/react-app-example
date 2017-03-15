@@ -24,7 +24,7 @@ export default (req, res) => {
   if (context.url) {
     res.redirect(302, context.url);
   } else {
-    //        ${scripts.map(script => `<link rel="preload" href="${script}" as="script"/>`).join('\n')}
+    //no 404??!
     res.send(`
       <head>
         <style>

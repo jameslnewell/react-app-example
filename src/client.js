@@ -1,27 +1,24 @@
 import 'babel-polyfill';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {BrowserRouter} from 'react-router-dom';
-import {Provider} from 'react-redux';
-import store from './store';
+import createRenderer from 'rechannel'; //eslint-disable-line
+import reducer from './reducer';
 import App from './components/App';
 import './client.css';
 
-const render = Root => {
-  ReactDOM.render(
-    <Provider store={store}>
-      <BrowserRouter basename={process.env.BASE_URL}>
-        <Root/>
-      </BrowserRouter>
-    </Provider>,
-    document.getElementById('app')
-  );
-};
+const renderer = createRenderer({
+  reducer,
+  routerProps: {basename: process.env.BASE_URL}
+});
 
-render(App);
+renderer.render(App);
 
 if (module.hot) {
+
   module.hot.accept('./components/App', () => {
-    render(require('./components/App').default); //eslint-disable-line global-require
+    renderer.render(require('./components/App').default); //eslint-disable-line global-require
   });
+
+  module.hot.accept('./reducer', () => {
+    renderer.replaceReducer(require('./reducer').default); //eslint-disable-line global-require
+  });
+
 }
