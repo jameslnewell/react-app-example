@@ -20,8 +20,8 @@
     "lint-staged": "^3.3.1",
     "prettier": "^0.22.0",
     "react-addons-test-utils": "^15.4.2",
-    "tradie": "^2.0.0-preview.24",
-    "tradie-template-react-app": "^1.0.0-preview.1"
+    "tradie": "^4.0.0-preview.1",
+    "tradie-template-react-app": "^1.0.0-preview.2"
   },
   "scripts": {
     "clean": "cross-env NODE_PATH='./node_modules:./node_modules/tradie-template-react-app' tradie clean",
