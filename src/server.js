@@ -1,10 +1,13 @@
 import 'source-map-support/register';
 import express from 'express';
-import removableMiddleware from 'removable-middleware';
-import reactAppMiddleware from './reactAppMiddleware';
+import rechannel from 'rechannel';
+import App from './components/App';
 
 const app = express();
-const middleware = removableMiddleware(reactAppMiddleware);
+const middleware = rechannel({
+  component,
+  reducer
+});
 
 app
   .use(express.static(__dirname))
@@ -13,7 +16,13 @@ app
 ;
 
 if (module.hot) {
-	module.hot.accept('./reactAppMiddleware', () => {
-    middleware.replace(require('./reactAppMiddleware').default); //eslint-disable-line global-require
+
+	module.hot.accept('./components/App', () => {
+    middleware.replaceComponent(require('./components/App').default); //eslint-disable-line global-require
 	});
+
+  module.hot.accept('./reducer', () => {
+    middleware.replaceReducer(require('./reducer').default); //eslint-disable-line global-require
+  });
+
 }

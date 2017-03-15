@@ -9,7 +9,6 @@
     "react-redux": "^5.0.3",
     "react-router-dom": "^4.0.0-beta.7",
     "redux": "^3.6.0",
-    "removable-middleware": "^1.0.0",
     "rev-manifest-path": "^0.2.0",
     "source-map-support": "^0.4.11",
     "styled-components": "^2.0.0-7"
