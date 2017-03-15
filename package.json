@@ -10,6 +10,7 @@
     "react-router-dom": "^4.0.0-beta.7",
     "redux": "^3.6.0",
     "removable-middleware": "^1.0.0",
+    "rev-manifest-path": "^0.2.0",
     "source-map-support": "^0.4.11",
     "styled-components": "^2.0.0-7"
   },
@@ -23,10 +24,10 @@
     "tradie-template-react-app": "^1.0.0-preview.1"
   },
   "scripts": {
-    "clean": "cross-env NODE_PATH='./node_modules;./node_modules/tradie-template-react-app' tradie clean",
-    "build": "cross-env NODE_PATH='./node_modules;./node_modules/tradie-template-react-app' tradie build",
-    "serve": "cross-env NODE_PATH='./node_modules;./node_modules/tradie-template-react-app' tradie serve",
-    "test": "cross-env NODE_PATH='./node_modules;./node_modules/tradie-template-react-app' tradie test",
+    "clean": "cross-env NODE_PATH='./node_modules:./node_modules/tradie-template-react-app' tradie clean",
+    "build": "cross-env NODE_PATH='./node_modules:./node_modules/tradie-template-react-app' tradie build",
+    "serve": "cross-env NODE_PATH='./node_modules:./node_modules/tradie-template-react-app' tradie serve",
+    "test": "cross-env NODE_PATH='./node_modules:./node_modules/tradie-template-react-app' tradie test",
     "precommit": "lint-staged"
   },
   "lint-staged": {

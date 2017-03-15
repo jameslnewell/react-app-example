@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import loadAsync from './Loader';
 
 const Layout = styled.div`
-
 `;
 
 const Header = styled.header`
