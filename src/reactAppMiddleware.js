@@ -27,6 +27,7 @@ export default (req, res) => {
     //        ${scripts.map(script => `<link rel="preload" href="${script}" as="script"/>`).join('\n')}
     res.send(`
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <style>
           ${css}
         </style>
