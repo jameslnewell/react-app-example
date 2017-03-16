@@ -31,7 +31,6 @@ export default (req, res) => {
         <style>
           ${css}
         </style>
-        <link href="${assetPath('client.css')}" rel="stylesheet"/>
       </head>
       <body>
         <div id="app">${html}</div>

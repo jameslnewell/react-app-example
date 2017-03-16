@@ -33,6 +33,9 @@ export default (load, options = {}) => {
         return;
       }
 
+      //TODO: check somehow if we've been server rendered, if not, wait Xs before showing the shell/loading component
+      //TODO: look into transitions in react-router v4
+
       load().then(
         module => {
           this.component = module.default || module;
