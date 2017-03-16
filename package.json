@@ -12,7 +12,8 @@
     "removable-middleware": "^1.0.0",
     "rev-manifest-path": "^0.2.0",
     "source-map-support": "^0.4.11",
-    "styled-components": "^2.0.0-7"
+    "styled-components": "^2.0.0-7",
+    "styled-components-spacing": "^2.0.3"
   },
   "devDependencies": {
     "enzyme": "^2.7.1",
