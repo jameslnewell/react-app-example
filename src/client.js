@@ -5,12 +5,10 @@ import App from './components/App';
 import './client.css';
 
 const renderer = rechannel({
-  component,
   reducer,
+  component: App,
   routerProps: {basename: process.env.BASE_URL}
 });
-
-renderer.render(App);
 
 if (module.hot) {
 

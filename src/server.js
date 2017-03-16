@@ -5,8 +5,8 @@ import App from './components/App';
 
 const app = express();
 const middleware = rechannel({
-  component,
-  reducer
+  reducer,
+  component: App
 });
 
 app
