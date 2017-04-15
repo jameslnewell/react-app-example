@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 //TODO: move to own package
 
@@ -12,7 +13,7 @@ const Error = ({error}) => (
 );
 
 Error.propTypes = {
-  error: React.PropTypes.instanceOf(Error)
+  error: PropTypes.instanceOf(Error)
 };
 
 export default (load, options = {}) => {
