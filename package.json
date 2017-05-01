@@ -2,38 +2,36 @@
   "name": "react-app",
   "dependencies": {
     "babel-polyfill": "^6.23.0",
-    "cross-env": "^4.0.0",
     "express": "^4.15.0",
     "prop-types": "^15.5.8",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-redux": "^5.0.3",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4",
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",
     "removable-middleware": "^1.0.0",
     "rev-manifest-path": "^0.2.0",
-    "source-map-support": "^0.4.11",
-    "styled-components": "^2.0.0-7",
-    "styled-components-spacing": "^2.0.3"
+    "source-map-support": "^0.4.15",
+    "styled-components": "^2.0.0-17",
+    "styled-components-spacing": "^2.0.4"
   },
   "devDependencies": {
     "enzyme": "^2.8.2",
-    "husky": "^0.13.2",
-    "lint-staged": "^3.3.1",
-    "prettier": "^1.1.0",
-    "react-test-renderer": "^15.5.4",
-    "tradie": "^4.0.0-rc.0",
-    "tradie-template-react-app": "^4.0.0-rc.0"
+    "husky": "^0.13.3",
+    "lint-staged": "^3.4.1",
+    "prettier": "^1.2.2",
+    "tradie": "^4.0.0-rc.6",
+    "tradie-template-react-app": "^4.0.0-rc.6"
   },
   "scripts": {
-    "clean": "cross-env NODE_PATH='./node_modules:./node_modules/tradie-template-react-app' tradie clean",
-    "build": "cross-env NODE_PATH='./node_modules:./node_modules/tradie-template-react-app' tradie build",
-    "start": "cross-env NODE_PATH='./node_modules:./node_modules/tradie-template-react-app' tradie serve",
-    "test": "cross-env NODE_PATH='./node_modules:./node_modules/tradie-template-react-app' tradie test",
+    "clean": "tradie clean",
+    "build": "tradie build",
+    "start": "tradie serve",
+    "test": "tradie test",
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "**/*.{js|jsx}": [
+    "**/*.{js,jsx}": [
       "prettier --write --single-quote --bracket-spacing=false",
       "git add"
     ]
