@@ -20,8 +20,8 @@
     "husky": "^0.13.3",
     "lint-staged": "^3.4.1",
     "prettier": "^1.2.2",
-    "tradie": "^4.0.0-rc.6",
-    "tradie-template-react-app": "^4.0.0-rc.6"
+    "tradie": "^4.0.0",
+    "tradie-template-react-app": "^4.0.0"
   },
   "scripts": {
     "clean": "tradie clean",
